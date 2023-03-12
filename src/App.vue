@@ -1,16 +1,23 @@
 <template>
   <div id="app">
-    <keep-alive>
-      <component :is="currentFunction">
+    <div id="functionSwitch">
+      <switch-button value="Inpaiting"></switch-button>
+      <switch-button value="Super-Resolution"></switch-button>
+    </div>
+    <div id="workingArea">
+      <keep-alive>
+        <component :is="currentFunction">
 
-      </component>
-    </keep-alive>
+        </component>
+      </keep-alive>
+    </div>
   </div>
 </template>
 
 <script>
 import SuperResolution from './components/SuperResolution.vue';
 import InpaitingUnit from './components/InpaitingUnit.vue';
+import SwitchButton from './components/SwitchButton.vue'
 
 export default {
   name: 'App',
@@ -21,8 +28,9 @@ export default {
     }
   },
   components: {
+    SwitchButton,
     SuperResolution,
-    InpaitingUnit
+    InpaitingUnit,
   },
   computed:{
     currentFunction: function(){

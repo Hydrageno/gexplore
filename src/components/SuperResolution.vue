@@ -1,5 +1,5 @@
 <template>
-    <div class="test"></div>
+    <div class="test">SuperResolution</div>
 </template>
 
 <script>
@@ -9,11 +9,4 @@ export default{
 </script>
 
 <style lang="less">
-@width: 100px;
-@height: 100px;
-.test{
-    width: @width;
-    height: @height;
-    background-color: purple;
-}
 </style>

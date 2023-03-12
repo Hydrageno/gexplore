@@ -10,17 +10,19 @@
 
 <script>
 import SuperResolution from './components/SuperResolution.vue';
+import InpaitingUnit from './components/InpaitingUnit.vue';
 
 export default {
   name: 'App',
   data(){
     return {
       index: 0,
-      attrs:["SuperResolution"]
+      attrs:["SuperResolution", "InpaitingUnit"]
     }
   },
   components: {
-    SuperResolution
+    SuperResolution,
+    InpaitingUnit
   },
   computed:{
     currentFunction: function(){

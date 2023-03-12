@@ -1,6 +1,9 @@
 <template>
   <div id="app">
     <el-button type="success">Success Button</el-button>
+    <el-row :gutter="20">
+      <div class="box"></div>
+    </el-row>
   </div>
 </template>
 
@@ -16,7 +19,10 @@ export default {
 
 <style lang="less">
 @width: 100px;
-#app {
-  width: @width
+@height: 100px;
+.box{
+  width: @width;
+  height: @height;
+  background-color: purple;
 }
 </style>

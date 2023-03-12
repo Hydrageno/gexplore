@@ -44,18 +44,25 @@ export default{
     display: flex;
     flex-direction: row;
     flex-flow: wrap;
-    height: 800px;
+    height: 1000px;
     width: 100%;
     @imgAreaWidth: 49%;
-    @imgAreaHeight: 46%;
+    @imgAreaHeight: 37%;
+    @crossIntervalHeight: 1%;
     #preImgSRArea, #resultImgSRArea, #paintImgSRArea, #maskImgSRArea{
         width: @imgAreaWidth;
         height: @imgAreaHeight;
         background-color: green;
+        margin-bottom: @crossIntervalHeight;
     }
     #interval{
         width: 100% - @imgAreaWidth * 2;
         height: @imgAreaHeight;
+    }
+    #imgExapleContainerSRArea{
+        width: 100%;
+        height: 100% - @imgAreaHeight * 2 - @crossIntervalHeight * 3;
+        background-color: black;
     }
 }
 </style>

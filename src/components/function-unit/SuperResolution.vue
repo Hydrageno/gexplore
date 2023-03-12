@@ -62,7 +62,7 @@ export default{
     #imgExapleContainerSRArea{
         width: 100%;
         height: 100% - @imgAreaHeight * 2 - @crossIntervalHeight * 3;
-        background-color: black;
+        background-color: rgb(149,201,255);
     }
 }
 </style>

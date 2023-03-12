@@ -19,8 +19,8 @@
 </template>
 
 <script>
-import SuperResolution from './components/SuperResolution.vue';
-import InpaitingUnit from './components/InpaitingUnit.vue';
+import SuperResolution from './components/function-unit/SuperResolution.vue';
+import InpaitingUnit from './components/function-unit/InpaitingUnit.vue';
 
 export default {
   name: 'App',

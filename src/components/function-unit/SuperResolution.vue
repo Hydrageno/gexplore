@@ -13,7 +13,10 @@
         <div id="interval"></div>
         <div id="maskImgSRArea">
             <mask-img></mask-img>
-        </div>      
+        </div> 
+        <div id="imgExapleContainerSRArea">
+            <img-exaple-container></img-exaple-container>
+        </div>     
     </div>
 </template>
 
@@ -22,6 +25,7 @@ import PreImg from '../img-container/PreImg.vue'
 import ResultImg from '../img-container/ResultImg.vue'
 import PaintImg from '../img-container/PaintImg.vue'
 import MaskImg from '../img-container/MaskImg.vue'
+import ImgExapleContainer from '../ImgExapleContainer.vue'
 
 export default{
     name: 'SuperResolution',
@@ -30,43 +34,28 @@ export default{
         ResultImg,
         PaintImg,
         MaskImg,
+        ImgExapleContainer
     }
 }
 </script>
 
 <style lang="less">
-
 #superResolutionWorkingArea{
     display: flex;
     flex-direction: row;
     flex-flow: wrap;
     height: 800px;
     width: 100%;
-    @imgAreaWidth: 46%;
+    @imgAreaWidth: 49%;
     @imgAreaHeight: 46%;
-    #preImgSRArea{
+    #preImgSRArea, #resultImgSRArea, #paintImgSRArea, #maskImgSRArea{
         width: @imgAreaWidth;
         height: @imgAreaHeight;
         background-color: green;
     }
-    #resultImgSRArea{
-        width: @imgAreaWidth;
-        height: @imgAreaHeight;
-        background-color: purple;
-    }
     #interval{
         width: 100% - @imgAreaWidth * 2;
         height: @imgAreaHeight;
-    }
-    #paintImgSRArea{
-        width: @imgAreaWidth;
-        height: @imgAreaHeight;
-        background-color: yellow;
-    }
-    #maskImgSRArea{
-        width: @imgAreaWidth;
-        height: @imgAreaHeight;
-        background-color: red;
     }
 }
 </style>

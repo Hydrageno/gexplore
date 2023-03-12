@@ -47,25 +47,20 @@ export default {
   padding: 0;
   margin: 0;
 }
-@width: 100px;
-@height: 100px;
-.box{
-  width: @width;
-  height: @height;
-  background-color: purple;
-}
-#navigator{
-  height: 30px;
-  width: 100%;
-  background-color: black;
-}
-#body{
-  display: flex;
-  #leftBorder, #rightBorder{
-    flex: 1;
+#app{
+  #navigator{
+    height: 70px;
+    width: 100%;
+    background-color: black;
   }
-  #mainContainer{
-    flex: 8;
+  #body{
+    display: flex;
+    #leftBorder, #rightBorder{
+      flex: 1;
+    }
+    #mainContainer{
+      flex: 8;
+    }
   }
 }
 </style>

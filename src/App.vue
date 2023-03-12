@@ -3,17 +3,17 @@
     <div id="navigator"></div>
     <div id="body">
       <div id="leftBorder"></div>
-    <div id="mainContainer">
-      <el-tabs type="border-card">
-        <el-tab-pane label="SuperResolution">
-          <super-resolution></super-resolution>
-        </el-tab-pane>
-        <el-tab-pane label="Inpaiting">
-          <inpaiting-unit></inpaiting-unit>
-        </el-tab-pane>
-      </el-tabs>
-    </div>
-    <div id="rightBorder"></div>
+      <div id="mainContainer">
+        <el-tabs type="border-card">
+          <el-tab-pane label="SuperResolution">
+            <super-resolution></super-resolution>
+          </el-tab-pane>
+          <el-tab-pane label="Inpaiting">
+            <inpaiting-unit></inpaiting-unit>
+          </el-tab-pane>
+        </el-tabs>
+      </div>
+      <div id="rightBorder"></div>
     </div>
   </div>
 </template>

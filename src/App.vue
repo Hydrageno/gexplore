@@ -15,6 +15,7 @@
       </div>
       <div id="rightBorder"></div>
     </div>
+    <div id="footer"></div>
   </div>
 </template>
 
@@ -61,6 +62,10 @@ export default {
     #mainContainer{
       flex: 8;
     }
+  }
+  #footer{
+    height: 70px;
+    width: 100%;
   }
 }
 </style>

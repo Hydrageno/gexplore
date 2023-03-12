@@ -1,18 +1,31 @@
 <template>
   <div id="app">
-    <el-button type="success">Success Button</el-button>
-    <el-row :gutter="20">
-      <div class="box"></div>
-    </el-row>
+    <keep-alive>
+      <component :is="currentFunction">
+
+      </component>
+    </keep-alive>
   </div>
 </template>
 
 <script>
+import SuperResolution from './components/SuperResolution.vue';
 
 export default {
   name: 'App',
+  data(){
+    return {
+      index: 0,
+      attrs:["SuperResolution"]
+    }
+  },
   components: {
-    
+    SuperResolution
+  },
+  computed:{
+    currentFunction: function(){
+      return this.attrs[this.index]
+    }
   }
 }
 </script>

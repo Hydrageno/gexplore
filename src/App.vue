@@ -1,15 +1,19 @@
 <template>
   <div id="app">
-    <div id="functionSwitch">
-      <switch-button value="Inpaiting"></switch-button>
-      <switch-button value="Super-Resolution"></switch-button>
+    <div id="navigator"></div>
+    <div id="body">
+      <div id="leftBorder"></div>
+    <div id="mainContainer">
+      <el-tabs type="border-card">
+        <el-tab-pane label="SuperResolution">
+          <super-resolution></super-resolution>
+        </el-tab-pane>
+        <el-tab-pane label="Inpaiting">
+          <inpaiting-unit></inpaiting-unit>
+        </el-tab-pane>
+      </el-tabs>
     </div>
-    <div id="workingArea">
-      <keep-alive>
-        <component :is="currentFunction">
-
-        </component>
-      </keep-alive>
+    <div id="rightBorder"></div>
     </div>
   </div>
 </template>
@@ -17,7 +21,6 @@
 <script>
 import SuperResolution from './components/SuperResolution.vue';
 import InpaitingUnit from './components/InpaitingUnit.vue';
-import SwitchButton from './components/SwitchButton.vue'
 
 export default {
   name: 'App',
@@ -28,7 +31,6 @@ export default {
     }
   },
   components: {
-    SwitchButton,
     SuperResolution,
     InpaitingUnit,
   },
@@ -41,11 +43,29 @@ export default {
 </script>
 
 <style lang="less">
+*{
+  padding: 0;
+  margin: 0;
+}
 @width: 100px;
 @height: 100px;
 .box{
   width: @width;
   height: @height;
   background-color: purple;
+}
+#navigator{
+  height: 30px;
+  width: 100%;
+  background-color: black;
+}
+#body{
+  display: flex;
+  #leftBorder, #rightBorder{
+    flex: 1;
+  }
+  #mainContainer{
+    flex: 8;
+  }
 }
 </style>

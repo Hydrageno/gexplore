@@ -16,7 +16,7 @@
         </div> 
         <div id="imgExapleContainerSRArea">
             <img-exaple-container></img-exaple-container>
-        </div>     
+        </div>    
     </div>
 </template>
 
@@ -35,6 +35,15 @@ export default{
         PaintImg,
         MaskImg,
         ImgExapleContainer
+    },
+    data(){
+        return {
+        tableData: [{
+          date: '2016-05-02',
+          name: 'seven',
+          address: 'German'
+        }]
+      }
     }
 }
 </script>
@@ -62,7 +71,12 @@ export default{
     #imgExapleContainerSRArea{
         width: 100%;
         height: 100% - @imgAreaHeight * 2 - @crossIntervalHeight * 3;
-        background-color: rgb(149,201,255);
+        background-color: red;
+        color: black;
+        img-exaple-container{
+            width: 100%;
+            height: 100%;
+        }
     }
 }
 </style>

@@ -1,20 +1,18 @@
 <template>
-    <div id="superResolutionWorkingArea">
-        <div id="preImgSRArea">
-            <pre-img></pre-img>
-        </div>
-        <div id="interval"></div>
-        <div id="resultImgSRArea">
+    <div class="superResolutionWorkingArea">
+        <pre-img class="preImgSRArea"></pre-img>
+        <div class="interval"></div>
+        <div class="resultImgSRArea">
             <result-img></result-img>
         </div>
-        <div id="paintImgSRArea">
+        <div class="paintImgSRArea">
             <paint-img></paint-img>
         </div>
-        <div id="interval"></div>
-        <div id="maskImgSRArea">
+        <div class="interval"></div>
+        <div class="maskImgSRArea">
             <mask-img></mask-img>
         </div> 
-        <div id="imgExapleContainerSRArea">
+        <div class="imgExapleContainerSRArea">
             <img-exaple-container></img-exaple-container>
         </div>    
     </div>
@@ -49,31 +47,31 @@ export default{
 </script>
 
 <style lang="less">
-#superResolutionWorkingArea{
-    display: flex;
+.superResolutionWorkingArea{
+    display: flex;  //using flex layout
     flex-direction: row;
     flex-flow: wrap;
-    height: 1000px;
-    width: 100%;
-    @imgAreaWidth: 49%;
-    @imgAreaHeight: 37%;
-    @crossIntervalHeight: 1%;
-    #preImgSRArea, #resultImgSRArea, #paintImgSRArea, #maskImgSRArea{
+    height: 1000px;  // limit height 
+    width: 100%;  // succeed width from parent element
+    @imgAreaWidth: 49%;  // each img area width 
+    @imgAreaHeight: 37%;  // each img area height 
+    @imgCrossIntervalHeight: 1%;  // each interval under img area
+    .preImgSRArea, .resultImgSRArea, .paintImgSRArea, .maskImgSRArea{
         width: @imgAreaWidth;
         height: @imgAreaHeight;
         background-color: green;
-        margin-bottom: @crossIntervalHeight;
+        margin-bottom: @imgCrossIntervalHeight;
     }
-    #interval{
+    .interval{
         width: 100% - @imgAreaWidth * 2;
         height: @imgAreaHeight;
     }
-    #imgExapleContainerSRArea{
+    .imgExapleContainerSRArea{
         width: 100%;
-        height: 100% - @imgAreaHeight * 2 - @crossIntervalHeight * 3;
+        height: 100% - @imgAreaHeight * 2 - @imgCrossIntervalHeight * 3;
         background-color: red;
         color: black;
-        img-exaple-container{
+        img-exaple-container{  // set style of img exaple list
             width: 100%;
             height: 100%;
         }

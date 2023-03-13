@@ -1,6 +1,6 @@
 <template>
-    <div class="imgWorkingArea">  
-        <user-guide>&nbsp;&nbsp;<img src="../../assets/userguide.svg" height="17">input image&nbsp;</user-guide>
+    <div class="imgWorkingArea preImgArea">  
+        <user-guide>&nbsp;&nbsp;<img src="../../assets/picture.svg" height="17">input image&nbsp;</user-guide>
         <el-upload class="imgUploader" drag action="https://jsonplaceholder.typicode.com/posts">
             <div class="descriptionArea">
                 <i class="el-icon-upload"></i>
@@ -26,9 +26,8 @@ export default{
 
 <style lang="less">
 @import "../../assets/ContainerStyle.less";
-.imgWorkingArea{ 
-    cursor: pointer;  // set cursor style
-    position: relative;
+.preImgArea{ 
+    //position: relative;
     .imgUploader{
         height: 100%;  // succeed parent's height
         width: 100%;  // succeed parent's width

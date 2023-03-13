@@ -2,19 +2,11 @@
     <div class="superResolutionWorkingArea">
         <pre-img class="preImgSRArea"></pre-img>
         <div class="interval"></div>
-        <div class="resultImgSRArea">
-            <result-img></result-img>
-        </div>
-        <div class="paintImgSRArea">
-            <paint-img></paint-img>
-        </div>
+        <result-img class="resultImgSRArea"></result-img>
+        <paint-img class="paintImgSRArea"></paint-img>
         <div class="interval"></div>
-        <div class="maskImgSRArea">
-            <mask-img></mask-img>
-        </div> 
-        <div class="imgExapleContainerSRArea">
-            <img-exaple-container></img-exaple-container>
-        </div>    
+        <mask-img class="maskImgSRArea"></mask-img>
+        <img-exaple-container class="imgExapleContainerSRArea"></img-exaple-container>  
     </div>
 </template>
 
@@ -57,13 +49,14 @@ export default{
     @imgAreaHeight: 37%;  // each img area height 
     @imgCrossIntervalHeight: 1%;  // each interval under img area
     .preImgSRArea, .resultImgSRArea, .paintImgSRArea, .maskImgSRArea{
-        width: @imgAreaWidth;
+        width: @imgAreaWidth - 1%;
         height: @imgAreaHeight;
-        background-color: green;
+        background-color: white;
         margin-bottom: @imgCrossIntervalHeight;
+        box-sizing: border-box;
     }
     .interval{
-        width: 100% - @imgAreaWidth * 2;
+        width: 100% - @imgAreaWidth * 2 + 2%;
         height: @imgAreaHeight;
     }
     .imgExapleContainerSRArea{

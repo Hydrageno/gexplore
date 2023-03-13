@@ -1,5 +1,5 @@
 <template>
-    <div id="paintImgWorkingArea"></div>
+    <div class="imgWorkingArea"></div>
 </template>
 
 <script>
@@ -9,7 +9,5 @@ export default{
 </script>
 
 <style lang="less">
-#paintImgWorkingArea{
-    color: green;
-}
+@import "../../assets/ContainerStyle.less";
 </style>

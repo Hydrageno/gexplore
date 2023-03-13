@@ -43,7 +43,7 @@ export default{
     display: flex;  //using flex layout
     flex-direction: row;
     flex-flow: wrap;
-    height: 1000px;  // limit height 
+    height: 100vh;  // limit height 
     width: 100%;  // succeed width from parent element
     @imgAreaWidth: 49%;  // each img area width 
     @imgAreaHeight: 37%;  // each img area height 
@@ -64,10 +64,6 @@ export default{
         height: 100% - @imgAreaHeight * 2 - @imgCrossIntervalHeight * 3;
         background-color: red;
         color: black;
-        img-exaple-container{  // set style of img exaple list
-            width: 100%;
-            height: 100%;
-        }
     }
 }
 </style>

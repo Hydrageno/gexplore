@@ -1,5 +1,5 @@
 <template>
-    <div id="imgExapleContainerArea" :data="imgExample">
+    <div id="imgExapleContainerArea">
         <el-table :data="tableData" stripe>
             <el-table-column prop="date" label="date" width="180"></el-table-column>
             <el-table-column prop="name" label="name" width="180"></el-table-column>

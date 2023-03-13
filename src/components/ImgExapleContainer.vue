@@ -16,9 +16,21 @@ export default{
     data(){
         return {
         tableData: [{
-          date: '2016-05-02',
-          name: 'sev',
-          address: 'German'
+            date: '2016-05-02',
+            name: 'sev',
+            address: 'German'
+        },{
+            date: '2017-05-08',
+            name: 'well',
+            address: 'China'
+        },{
+            date: '2017-05-08',
+            name: 'well',
+            address: 'China'
+        },{
+            date: '2017-05-08',
+            name: 'well',
+            address: 'China'
         }]
       }
     }

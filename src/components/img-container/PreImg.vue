@@ -1,5 +1,5 @@
 <template>
-    <div class="imgWorkingArea preImgArea">  
+    <div class="imgArea preImgArea">  
         <user-guide>&nbsp;&nbsp;<img src="../../assets/picture.svg" height="17">input_image&nbsp;</user-guide>
         <el-upload class="imgUploader" drag action="https://jsonplaceholder.typicode.com/posts">
             <div class="descriptionArea">

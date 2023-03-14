@@ -1,5 +1,5 @@
 <template>
-    <div class="imgWorkingArea"></div>
+    <div class="imgArea maskImgArea"></div>
 </template>
 
 <script>

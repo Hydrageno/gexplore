@@ -1,6 +1,8 @@
 <template>
     <div ref="paintImgArea" 
-        class="imgWorkingArea paintImgArea">
+        class="imgArea paintImgArea"
+        id = "youtube"
+        >
         <user-guide>&nbsp;
             <img src="../../assets/pen.svg" height="17">
             paint_area<input v-model.number="lineWidth" style="border: none; border-bottom: 1px solid black; width: 22px; text-align: right;">px&nbsp;
@@ -11,6 +13,7 @@
             @mousemove="draw" 
             @mouseup="stopDrawing" 
             class="drawingCanvas"></canvas>
+        
     </div>
 </template>
 
@@ -35,9 +38,15 @@ export default{
     },
     mounted() {
         this.context = this.$refs.canvas.getContext('2d');
-        this.$refs.canvas.width = "549";
-        this.$refs.canvas.height = "294";
-        
+        // console.log(this.$refs.paintImgArea);
+        // console.log(this.$refs.canvas)
+        // this.$nextTick(()=>{
+        //     let parent = document.getElementById("youtube");
+        //     console.log(parent);
+            
+        // })
+        this.$refs.canvas.width = "200";
+        this.$refs.canvas.height = "200";
         this.context.lineJoin = 'round';
         this.context.lineCap = 'round';
     },
@@ -49,7 +58,6 @@ export default{
             else{
                 this.context.globalCompositeOperation = 'source-over'
             }
-            console.log(this.context.globalCompositeOperation)
             this.drawing = true;
             [this.lastX, this.lastY] = [e.offsetX, e.offsetY];  // define starting point('sp')
         },
@@ -74,12 +82,15 @@ export default{
 @import "../../assets/ContainerStyle.less";
 .paintImgArea{
     cursor: crosshair;
-    background: url("../../assets/logo.png"); // test mode: test background image style
+    //background: url("../../assets/logo.png"); // test mode: test background image style
     background-repeat: no-repeat;  
     background-size: 100% 100%;
     background-attachment: cover;  // self-stretch
     user-guide{
         user-select: none;
     }
+}
+.drawingCanvas{
+    overflow: hidden;
 }
 </style>

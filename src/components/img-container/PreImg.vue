@@ -4,11 +4,6 @@
         <el-upload class="imgUploader" drag action="https://jsonplaceholder.typicode.com/posts">
             <div class="descriptionArea">
                 <i class="el-icon-upload"></i>
-                <div class="descriptionTextArea">
-                    ①"Click to Upload"
-                        - - or - -
-                    "Drop Image Here"
-                </div>
             </div>
         </el-upload>     
     </div>

@@ -5,13 +5,28 @@
             <div class="rowInterval"></div>
             <result-img class="resultImgSRArea"></result-img>
         </div>
-        <div class="columnInterval"></div>
+        <div class="columnInterval">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            ① click to upload - - or - - drop image
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            ④ select the checkbox to download image
+        </div>
         <div class="PMPair">
             <paint-img class="paintImgSRArea"></paint-img>
             <div class="rowInterval"></div>
             <mask-img class="maskImgSRArea"></mask-img>
         </div>
-        <div class="columnInterval"></div>
+        <div class="columnInterval">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            ② custom thickness & select checkbox to erase
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            ③ click the checkbox to create mask image 
+        </div>
         <img-exaple-container class="imgExapleContainerSRArea"></img-exaple-container>  
     </div>
 </template>
@@ -82,10 +97,11 @@ export default{
         
     }
     .columnInterval{
-        flex: 2;
+        color: rgb(107,116,156);
+        flex: 3;
     }
     .imgExapleContainerSRArea{
-        flex:  100 - 2 * @imgAreaHeight - 2 * 2;
+        flex:  100 - 2 * @imgAreaHeight - 2 * 3;
         width: 100%;
     }
 }

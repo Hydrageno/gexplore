@@ -12,8 +12,7 @@
             @mousedown="startDrawing" 
             @mousemove="draw" 
             @mouseup="stopDrawing" 
-            class="drawingCanvas"></canvas>
-        
+            class="drawingCanvas"></canvas>    
     </div>
 </template>
 
@@ -82,6 +81,10 @@ export default{
 @import "../../assets/ContainerStyle.less";
 .paintImgArea{
     cursor: crosshair;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     //background: url("../../assets/logo.png"); // test mode: test background image style
     background-repeat: no-repeat;  
     background-size: 100% 100%;

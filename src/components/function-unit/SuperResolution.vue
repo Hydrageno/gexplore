@@ -1,5 +1,5 @@
 <template>
-    <div class="superResolutionWorkingArea">
+    <div class="superResolutionArea">
         <pre-img class="preImgSRArea"></pre-img>
         <div class="interval"></div>
         <result-img class="resultImgSRArea"></result-img>
@@ -39,12 +39,12 @@ export default{
 </script>
 
 <style lang="less">
-.superResolutionWorkingArea{
+.superResolutionArea{
     display: flex;  //using flex layout
     flex-direction: row;
     flex-flow: wrap;
     height: 800px;  // limit height 
-    width: 100%;  // succeed width from parent element
+    width: 100%;  // succeed width from parent element 'border-card'
     @imgAreaWidth: 49%;  // each img area width 
     @imgAreaHeight: 37%;  // each img area height 
     @imgCrossIntervalHeight: 1%;  // each interval under img area

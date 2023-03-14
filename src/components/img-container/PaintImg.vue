@@ -1,12 +1,10 @@
 <template>
     <div ref="paintImgArea" 
         class="imgWorkingArea paintImgArea">
-        <user-guide>&nbsp;&nbsp;
+        <user-guide>&nbsp;
             <img src="../../assets/pen.svg" height="17">
-            paint_area&nbsp;
-            <input v-model.number="lineWidth"
-                style="border: none; border-bottom: 1px solid black; width: 20px; text-align: right;">
-            px
+            paint_area<input v-model.number="lineWidth" style="border: none; border-bottom: 1px solid black; width: 22px; text-align: right;">px&nbsp;
+            <img src="../../assets/erase.svg" height="17"> <input type="checkbox" height="17" v-model="eraseMode">&nbsp;
         </user-guide>
         <canvas ref="canvas" 
             @mousedown="startDrawing" 
@@ -30,8 +28,9 @@ export default{
             lastX: 0,
             lastY: 0,
             hue: 0,
-            lineWidth: 3,
+            lineWidth: 100,
             picPath: '../../assets/logo.png',
+            eraseMode: false,
         }
     },
     mounted() {
@@ -44,13 +43,19 @@ export default{
     },
     methods: {
         startDrawing(e) {
-            this.$refs.paintImgArea.style.background = `url(${this.picPath})`;
+            if(this.eraseMode){
+                this.context.globalCompositeOperation = 'destination-out';
+            }
+            else{
+                this.context.globalCompositeOperation = 'source-over'
+            }
+            console.log(this.context.globalCompositeOperation)
             this.drawing = true;
             [this.lastX, this.lastY] = [e.offsetX, e.offsetY];  // define starting point('sp')
         },
         draw(e) {
             if (!this.drawing) return;
-            this.context.strokeStyle = `black`;
+            this.context.strokeStyle = this.eraseMode ? `rgb(255, 255, 255)`:`black`;
             this.context.lineWidth = this.lineWidth;
             this.context.beginPath();
             this.context.moveTo(this.lastX, this.lastY); // move the pen to exact location
@@ -69,7 +74,7 @@ export default{
 @import "../../assets/ContainerStyle.less";
 .paintImgArea{
     cursor: crosshair;
-    // background: url("../../assets/logo.png"); // test mode: test background image style
+    background: url("../../assets/logo.png"); // test mode: test background image style
     background-repeat: no-repeat;  
     background-size: 100% 100%;
     background-attachment: cover;  // self-stretch

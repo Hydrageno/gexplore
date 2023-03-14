@@ -49,9 +49,6 @@ export default{
             align-items: center;
             height: 100%;
             width: 100%;
-            .descriptionTextArea{
-                text-align: center;
-            }
         }   
     }
 }

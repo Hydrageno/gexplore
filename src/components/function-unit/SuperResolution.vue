@@ -7,7 +7,12 @@
         </div>
         <div class="columnInterval">
             <div class="preImgDescriptionText">① click to upload - - or - - drop image</div>
-            <div class="resultImgDescriptionText">④ select the checkbox to download image</div>
+            <div class="resultImgDescriptionText">
+                ④ click
+                <el-button size="mini" @click="resultGenerator()">INPAINT</el-button>
+                to inpaint,
+                <el-button size="mini" @click="downloadResult()">DOWNLOAD</el-button>
+                 to download </div>
         </div>
         <div class="PMPair">
             <paint-img class="paintImgSRArea"></paint-img>
@@ -16,7 +21,10 @@
         </div>
         <div class="columnInterval">
             <div class="paintImgDescriptionText">② custom thickness & select checkbox to erase</div>
-            <div class="resultImgDescriptionText">③ click the checkbox to create mask image </div>
+            <div class="resultImgDescriptionText">
+                ③ click the 
+                <el-button size="mini" @click="maskGenerator()">MASK</el-button>
+                to mask image </div>
         </div>
         <img-exaple-container class="imgExapleContainerSRArea"></img-exaple-container>  
     </div>
@@ -46,6 +54,17 @@ export default{
           address: 'German'
         }]
       }
+    },
+    methods: {
+        resultGenerator: function(){
+            console.log("result")
+        },
+        downloadResult: function(){
+            console.log("download")
+        },
+        maskGenerator:function(){
+            console.log("mask")
+        }
     }
 }
 </script>
@@ -54,7 +73,7 @@ export default{
 .superResolutionArea{
     display: flex;  //using flex layout
     flex-direction: column;
-    height: 800px;  // limit height 
+    height: 900px;  // limit height 
     width: 100%;  // succeed width from parent element 'border-card'
     @imgAreaWidth: 49.5;  // each img area width 
     @imgAreaHeight: 37;  // each img area height 
@@ -89,7 +108,7 @@ export default{
     }
     .columnInterval{
         color: rgb(107,116,156);
-        flex: 3;
+        flex: 5;
         display: flex;
         flex-direction: row;
         justify-content: center;
@@ -100,7 +119,7 @@ export default{
         }
     }
     .imgExapleContainerSRArea{
-        flex:  100 - 2 * @imgAreaHeight - 2 * 3;
+        flex:  100 - 2 * @imgAreaHeight - 2 * 5;
         width: 100%;
     }
 }

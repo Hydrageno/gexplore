@@ -43,7 +43,7 @@ export default{
     display: flex;  //using flex layout
     flex-direction: row;
     flex-flow: wrap;
-    height: 100vh;  // limit height 
+    height: 800px;  // limit height 
     width: 100%;  // succeed width from parent element
     @imgAreaWidth: 49%;  // each img area width 
     @imgAreaHeight: 37%;  // each img area height 

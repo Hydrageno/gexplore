@@ -1,11 +1,17 @@
 <template>
     <div class="superResolutionArea">
-        <pre-img class="preImgSRArea"></pre-img>
-        <div class="interval"></div>
-        <result-img class="resultImgSRArea"></result-img>
-        <paint-img class="paintImgSRArea"></paint-img>
-        <div class="interval"></div>
-        <mask-img class="maskImgSRArea"></mask-img>
+        <div class="PRPair">
+            <pre-img class="preImgSRArea"></pre-img>
+            <div class="rowInterval"></div>
+            <result-img class="resultImgSRArea"></result-img>
+        </div>
+        <div class="columnInterval"></div>
+        <div class="PMPair">
+            <paint-img class="paintImgSRArea"></paint-img>
+            <div class="rowInterval"></div>
+            <mask-img class="maskImgSRArea"></mask-img>
+        </div>
+        <div class="columnInterval"></div>
         <img-exaple-container class="imgExapleContainerSRArea"></img-exaple-container>  
     </div>
 </template>
@@ -41,29 +47,46 @@ export default{
 <style lang="less">
 .superResolutionArea{
     display: flex;  //using flex layout
-    flex-direction: row;
-    flex-flow: wrap;
+    flex-direction: column;
     height: 800px;  // limit height 
     width: 100%;  // succeed width from parent element 'border-card'
-    @imgAreaWidth: 49%;  // each img area width 
-    @imgAreaHeight: 37%;  // each img area height 
-    @imgCrossIntervalHeight: 1%;  // each interval under img area
-    .preImgSRArea, .resultImgSRArea, .paintImgSRArea, .maskImgSRArea{
-        width: @imgAreaWidth - 1%;
-        height: @imgAreaHeight;
-        background-color: white;
-        margin-bottom: @imgCrossIntervalHeight;
-        box-sizing: border-box;
+    @imgAreaWidth: 49.5;  // each img area width 
+    @imgAreaHeight: 37;  // each img area height 
+    //formula:
+    /**formula:
+    * PRPair_Height + PMPair_Height + 2 * columnInterval + imgExapleContainerSRArea_Height = superResolutionArea_Height
+    * preImgSRArea_Width + rowInterval + resultImgSRArea_Width = PRPair_Width
+    * paintImgSRArea_Width + rowInterval + maskImgSRArea_Width = PMPair_Width
+    */
+    .PRPair{
+        flex: @imgAreaHeight;
+        display: flex;
+        flex-direction: row;
+        .preImgSRArea, .resultImgSRArea{
+            flex: @imgAreaWidth;
+        }
+        .rowInterval{
+            flex: 100 - 2 * @imgAreaWidth;
+        }
     }
-    .interval{
-        width: 100% - @imgAreaWidth * 2 + 2%;
-        height: @imgAreaHeight;
+    .PMPair{
+        flex: @imgAreaHeight;
+        display: flex;
+        flex-direction: row;
+        .paintImgSRArea, .maskImgSRArea{
+            flex: @imgAreaWidth;
+        }
+        .rowInterval{
+            flex: 100 - 2 * @imgAreaWidth;
+        }
+        
+    }
+    .columnInterval{
+        flex: 2;
     }
     .imgExapleContainerSRArea{
+        flex:  100 - 2 * @imgAreaHeight - 2 * 2;
         width: 100%;
-        height: 100% - @imgAreaHeight * 2 - @imgCrossIntervalHeight * 3;
-        background-color: red;
-        color: black;
     }
 }
 </style>

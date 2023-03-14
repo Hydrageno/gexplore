@@ -6,13 +6,8 @@
             <result-img class="resultImgSRArea"></result-img>
         </div>
         <div class="columnInterval">
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            ① click to upload - - or - - drop image
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp;&nbsp;
-            ④ select the checkbox to download image
+            <div class="preImgDescriptionText">① click to upload - - or - - drop image</div>
+            <div class="resultImgDescriptionText">④ select the checkbox to download image</div>
         </div>
         <div class="PMPair">
             <paint-img class="paintImgSRArea"></paint-img>
@@ -20,12 +15,8 @@
             <mask-img class="maskImgSRArea"></mask-img>
         </div>
         <div class="columnInterval">
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            ② custom thickness & select checkbox to erase
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            ③ click the checkbox to create mask image 
+            <div class="paintImgDescriptionText">② custom thickness & select checkbox to erase</div>
+            <div class="resultImgDescriptionText">③ click the checkbox to create mask image </div>
         </div>
         <img-exaple-container class="imgExapleContainerSRArea"></img-exaple-container>  
     </div>
@@ -99,6 +90,14 @@ export default{
     .columnInterval{
         color: rgb(107,116,156);
         flex: 3;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        .preImgDescriptionText, .resultImgDescriptionText, .paintImgDescriptionText, .maskImgDescriptionText{
+            flex: 1;
+        }
     }
     .imgExapleContainerSRArea{
         flex:  100 - 2 * @imgAreaHeight - 2 * 3;

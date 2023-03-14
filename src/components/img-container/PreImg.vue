@@ -5,7 +5,7 @@
             <div class="descriptionArea">
                 <i class="el-icon-upload"></i>
                 <div class="descriptionTextArea">
-                    "Click to Upload"
+                    ①"Click to Upload"
                         - - or - -
                     "Drop Image Here"
                 </div>

@@ -6,7 +6,7 @@
             <result-img class="resultImgSRArea"></result-img>
         </div>
         <div class="columnInterval">
-            <div class="preImgDescriptionText">① click to upload - - or - - drop image</div>
+            <div class="preImgDescriptionText">① click to upload  or drop image</div>
             <div class="resultImgDescriptionText">
                 ④ click
                 <el-button size="mini" @click="resultGenerator()">INPAINT</el-button>
@@ -15,16 +15,30 @@
                  to download </div>
         </div>
         <div class="PMPair">
-            <paint-img class="paintImgSRArea"></paint-img>
+            <paint-img class="paintImgSRArea" v-bind:eraseMode="eraseModeChecked" v-bind:lineWidth="customlineWidth"></paint-img>
             <div class="rowInterval"></div>
             <mask-img class="maskImgSRArea"></mask-img>
         </div>
         <div class="columnInterval">
-            <div class="paintImgDescriptionText">② custom thickness & select checkbox to erase</div>
+            <div class="paintImgDescriptionText">
+                ② custom thickness by 
+                <!--custom handwriting line width
+                    pass this value to custom line width.
+                -->
+                <input class="lineWidthArea" v-model.number="customlineWidth" style="border: none; border-bottom: 1px solid black; width: 22px; text-align: right;">
+                ,check 
+                <!--draw mode key value: 
+                    eraseMode
+                    pass this value to select draw or erase function.
+                -->
+                <el-checkbox  v-model="eraseModeChecked" @change="activateErase()">ERASE</el-checkbox>
+                to erase
+            </div>
             <div class="resultImgDescriptionText">
                 ③ click the 
                 <el-button size="mini" @click="maskGenerator()">MASK</el-button>
-                to mask image </div>
+                to mask image 
+            </div>
         </div>
         <img-exaple-container class="imgExapleContainerSRArea"></img-exaple-container>  
     </div>
@@ -48,19 +62,21 @@ export default{
     },
     data(){
         return {
-        tableData: [{
-          date: '2016-05-02',
-          name: 'seven',
-          address: 'German'
-        }]
+            eraseModeChecked: false, // pass the value to <paint-img> to activate erase mode or deactivate.
+            customlineWidth: 1, // pass the value to <paint-img> to custom line width.
       }
     },
     methods: {
-        resultGenerator: function(){
+        resultGenerator: function(){ 
             console.log("result")
         },
         downloadResult: function(){
             console.log("download")
+        },
+        activateErase(){
+            //test function
+            //simply examine the ${eraseModeChecked} value
+            console.log(this.eraseModeChecked);
         },
         maskGenerator:function(){
             console.log("mask")

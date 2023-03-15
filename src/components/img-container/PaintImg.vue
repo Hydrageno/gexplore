@@ -5,8 +5,7 @@
         >
         <user-guide>&nbsp;
             <img src="../../assets/pen.svg" height="17">
-            paint_area<input v-model.number="lineWidth" style="border: none; border-bottom: 1px solid black; width: 22px; text-align: right;">px&nbsp;
-            <img src="../../assets/erase.svg" height="17"> <input type="checkbox" height="17" v-model="eraseMode">&nbsp;
+            paint_area&nbsp;
         </user-guide>
         <canvas ref="canvas" 
             @mousedown="startDrawing" 
@@ -23,6 +22,7 @@ export default{
     components: {
         UserGuide
     },
+    props:['eraseMode', 'lineWidth'],
     data() {
         return {
             drawing: false,
@@ -30,9 +30,7 @@ export default{
             lastX: 0,
             lastY: 0,
             hue: 0,
-            lineWidth: 100,
             picPath: '../../assets/logo.png',
-            eraseMode: false,
         }
     },
     mounted() {
@@ -81,10 +79,6 @@ export default{
 @import "../../assets/ContainerStyle.less";
 .paintImgArea{
     cursor: crosshair;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     //background: url("../../assets/logo.png"); // test mode: test background image style
     background-repeat: no-repeat;  
     background-size: 100% 100%;

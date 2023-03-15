@@ -81,7 +81,14 @@ export default{
         maskGenerator:function(){
             console.log("mask")
         }
-    }
+    },
+    // mounted(){
+    //     this.$nextTick(() => {
+    //         const element = document.querySelector('.paintImgSRArea');
+    //         const height = element.offsetHeight;
+    //         console.log('Height:', height);
+    //     });
+    // }
 }
 </script>
 
@@ -137,6 +144,9 @@ export default{
     .imgExapleContainerSRArea{
         flex:  100 - 2 * @imgAreaHeight - 2 * 5;
         width: 100%;
+    }
+    .el-button{
+        background-color: rgb(244,245,247);
     }
 }
 </style>

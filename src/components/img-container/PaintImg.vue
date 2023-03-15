@@ -1,8 +1,6 @@
 <template>
-    <div ref="paintImgArea" 
-        class="imgArea paintImgArea"
-        id = "youtube"
-        >
+    <div class="imgArea paintImgArea"
+        @resize="handleResize()">
         <user-guide>&nbsp;
             <img src="../../assets/pen.svg" height="17">
             paint_area&nbsp;
@@ -35,15 +33,14 @@ export default{
     },
     mounted() {
         this.context = this.$refs.canvas.getContext('2d');
-        // console.log(this.$refs.paintImgArea);
-        // console.log(this.$refs.canvas)
-        // this.$nextTick(()=>{
-        //     let parent = document.getElementById("youtube");
-        //     console.log(parent);
-            
-        // })
-        this.$refs.canvas.width = "200";
-        this.$refs.canvas.height = "200";
+        this.$nextTick(() => {
+            const element = document.querySelector('.paintImgArea');
+            const height = element.offsetHeight;
+            const width = element.offsetWidth;
+            this.$refs.canvas.height = height;
+            this.$refs.canvas.width = width;
+            //console.log('Height:', height);
+        });
         this.context.lineJoin = 'round';
         this.context.lineCap = 'round';
     },
@@ -71,6 +68,18 @@ export default{
         stopDrawing() {
             this.drawing = false;
         },
+        handleResize(){
+            // this method solve the problem about resie canvas.
+            console.log("value changed")
+            this.$nextTick(() => {
+                const element = document.querySelector('.paintImgArea');
+                const height = element.offsetHeight;
+                const width = element.offsetWidth;
+                this.$refs.canvas.height = height;
+                this.$refs.canvas.width = width;
+            //console.log('Height:', height);
+            });
+        }
     }
 }
 </script>
